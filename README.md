@@ -85,13 +85,13 @@
   <p style="margin-top: 10px;">Figure 2. Deep Learning Dataset about apple from Jeonbuk</p>
 </div>
 
-저희는 딥러닝 모델을 훈련하기 위해 전북시에서 제공하는 사과 데이터셋을 사용하였습니다. 한국에서 가장 많이 소비되는 후지(Fuji) 사과를 당도 예측 대상으로 선정하였고, 딥러닝 학습을 수행하기 위해 후지 사과의 17,000개의 이미지와 라벨링된 데이터를 사용하였습니다.
+저희는 딥러닝 모델을 훈련하기 위해 전북에서 제공하는 사과 데이터셋을 사용하였습니다. 한국에서 가장 많이 소비되는 후지(Fuji) 사과를 당도 예측 대상으로 선정하였고, 딥러닝 학습을 수행하기 위해 후지 사과의 17,000개의 이미지와 라벨링된 데이터를 사용하였습니다.
 
 
 
 ### Format of dataset
 
-Dataset from Jeonbuk is provided labeling data as json file. 
+전북 지역에서 제공된 라벨링 데이터는 json 파일로 되어 있습니다.
 
 <div align="center">
 
@@ -168,7 +168,10 @@ Because each driver has proper versions for compatbility, you must select the ap
 
 **1. Check PyTorch & CUDA Version**
 
-<img width="635" alt="pytorch" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/3595a722-11ec-420f-b1a8-d94f590116bb">
+<div align="center">
+  <img width="940" alt="pytorch" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/pytorch.png" /><br>
+  <p style="margin-top: 10px;">Figure 3. Pytorch & CUDA Version</p>
+</div>
 
 > **Figure 3. Pytorch & CUDA Version**
 
