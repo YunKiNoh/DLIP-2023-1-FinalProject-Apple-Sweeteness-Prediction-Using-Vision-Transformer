@@ -474,7 +474,7 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 | :------: |
 |   5.08   |
 
-There were significant errors in a few cases,  so we couldn't achieve the goal of an error within 5%. 
+일부 사과에 대해서 급격히 오차가 증가하며 오차를 5% 이내의 정확도를 달성한다는 목표는 달성하지 못하였습니다.
 
 > **Table 3. Evaluation Error**
 
@@ -486,7 +486,7 @@ There were significant errors in a few cases,  so we couldn't achieve the goal o
 
 > **Table 4. Result**
 
-In the process of training model, we can check train loss under 2 MSE loss and this model is not overfitted by checking validation error. However, we couldn't achieve evaluation goal. 
+모델 훈련 과정에서 훈련 손실이 2 MSE 이하로 유지되는 것을 확인하였고, 검증 오류를 통해 모델이 과적합되지 않았음을 확인할 수 있었습니다. 그러나 평가 목표를 달성하는 데에는 실패하였습니다.
 
 
 
@@ -494,7 +494,7 @@ In the process of training model, we can check train loss under 2 MSE loss and t
 
 #### Light condition
 
-Upon examining the data used for training, it was observed that more than 70% of the images were captured in an orchard. This indicates that the photos were taken under sufficient lighting conditions, implying that evaluating the model trained indoors may introduce errors. To mitigate this, it is expected that increasing the quantity of training data captured under indoor conditions would lead to improved performance.
+훈련에 사용된 데이터를 검토한 결과, 70% 이상의 이미지가 과수원에서 촬영된 것으로 나타났습니다. 이는 충분한 조명 조건에서 촬영된 사진이 대부분임을 의미하며, 실내 환경에서 훈련된 모델을 평가할 경우 오차가 발생할 수 있음을 시사합니다. 게다가 이번 프로젝트에서는 사과의 당도를 예측하기 위해 오로지 색깔 정보만을 의지하였기 때문에 이러한 광학 환경의 변화가 당도 예측에 더욱 큰 영향을 주는 것으로 보입니다. 이를 통해서 저희는 이미 시중에서 활용되고 있는 과일 당도 예측 사례들이 왜 외부 빛을 차단한 제한된 공간에서 주로 이루어지고 있는 지를 알 수 있었습니다. 실제로 실험했던 장소가 아닌 다른 곳에서 시연했을 때 당도 예측의 오차율이 급증했는데, 당도 예측의 안정성 및 정확도를 높이기 위해서는 제한된 환경에서 예측이 이루어져야 할 것입니다.
 
 <img width="576" alt="oneside" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/1fd6c890-8621-414b-b9b2-944864f42f6a">
 
