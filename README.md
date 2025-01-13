@@ -3,9 +3,8 @@
 
 **date**: 2023/06/19
 
-**Author**: Yun Ki Noh/ EunChan Kim
+**Author**: Yun Ki Noh 21800226 / EunChan Kim 21801017
 
-**Github**: https://github.com/GracenPraise/DLIP2023
 
 **Demo Video**: https://youtu.be/GrVAf8BUc9s
 
