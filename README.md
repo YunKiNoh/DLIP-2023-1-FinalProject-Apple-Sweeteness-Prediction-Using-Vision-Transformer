@@ -251,7 +251,8 @@ PyTorch를 CUDA 11.7 version과 함께 설치합니다.
 
 <div align="center">
   <img width="940" alt="vit" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/vit.JPG" /><br>
-  <p style="margin-top: 10px;">Figure 9. Structure of Vision Transformers (VIT). Referenced by 'Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR.'
+  <p style="margin-top: 10px;">Figure 9. Structure of Vision Transformers (VIT). Referenced by 'Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR.'</p>
+</div>
 
 제공된 사과 데이터셋에서 일부 사진에 회전이 적용되어 세그멘테이션 좌표가 올바르게 맞지 않는 문제가 있었습니다. 이 문제를 해결하기 위해 사진의 EXIF 정보를 추출하여 회전이 적용된 경우 이를 조정하는 전처리 과정을 수행하여 올바른 정렬을 보장하였습니다.
 
@@ -350,7 +351,7 @@ num_models = 3
 프로젝트 진행 중 설정된 목표 훈련 손실값인 2 이하를 달성한 것을 확인하였으며, 훈련 과정에서 과적합의 징후 없이 원활하게 진행되었음을 확인하였습니다.
 
 <div align="center">
-  <img width="940" alt="loss" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/loss.JPG" /><br>
+  <img width="940" alt="loss" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/loss.png" /><br>
   <p style="margin-top: 10px;">Graph1. Train and Validation Loss Graph</p>
 </div>
 
@@ -478,9 +479,10 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 실시간으로 사과 당도를 예측하는 모델의 높은 연산 부담으로 인해 프레임 드롭이 발생하는 문제가 있습니다. 이를 완화하기 위해, 사과가 자리에 놓이고 Enter 키가 눌렸을 때만 예측을 수행하도록 설정하였습니다. 또한, 각 프레임 변화에 따른 값의 변동을 방지하기 위해 여러 프레임에서 예측된 당도 값을 평균으로 계산합니다. 예측된 당도 값은 계속 누적되어 평균값이 계산되며, 사과가 바뀌는 경우 'r' 키를 눌러 누적된 값을 초기화한 뒤 Enter 키를 다시 눌러 예측을 진행해야 합니다.
 
-| ![ready](https://github.com/GracenPraise/DLIP2023/assets/91367451/ba8f6e11-ec82-4565-bc6d-8b688a37ba02) | ![press_enter](https://github.com/GracenPraise/DLIP2023/assets/91367451/2fb3adb9-62b7-492c-8600-97b9e51f096f) | ![result](https://github.com/GracenPraise/DLIP2023/assets/91367451/0f0d6a77-ac59-4752-9504-66418f435a9b) |
+| ![ready](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/ready.JPG) | ![press_enter](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/press_enter.JPG) | ![result](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/result.JPG) |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-|  **Figure 9. When No Object in Frame**   |    **Figure 10. When Apple Deteted**     |      **Figure 11. Brix Prediction**      |
+|   Figure 9. When No Object in Frame       |   Figure 10. When Apple Detected       |     Figure 11. Brix Prediction          |
+
 
 
 
