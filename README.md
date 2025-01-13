@@ -85,8 +85,6 @@
   <p style="margin-top: 10px;">Figure 2. Deep Learning Dataset about apple from Jeonbuk</p>
 </div>
 
-> **Figure 2. Deep Learning Dataset about apple from Jeonbuk**
-
 저희는 딥러닝 모델을 훈련하기 위해 전북시에서 제공하는 사과 데이터셋을 사용하였습니다. 한국에서 가장 많이 소비되는 후지(Fuji) 사과를 당도 예측 대상으로 선정하였고, 딥러닝 학습을 수행하기 위해 후지 사과의 17,000개의 이미지와 라벨링된 데이터를 사용하였습니다.
 
 
@@ -95,11 +93,17 @@
 
 Dataset from Jeonbuk is provided labeling data as json file. 
 
+<div align="center">
+
 |      Sugar Content       |         Segmentation         |
 | :----------------------: | :--------------------------: |
-| <img width="195" alt="labeling" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/02cca91c-0e7d-4893-8477-231fec72f31c"> | <img width="468" alt="segmentation" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/1f42ea61-5bdf-4ae9-bc59-e426ef442e77">> |
+| <img width="195" alt="labeling" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/dataset.png"> | <img width="468" alt="segmentation" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/dataset.png"> |
 
-> **Table 2. Labeling Data**
+<br>
+<p>Table 2. Labeling Data</p>
+
+</div>
+
 
 라벨링된 데이터셋에서는 '분할 좌표(segmentation coordination)'를 사용하여 사과의 픽셀을 추출하고, '당도 정보(sugar content's information)'를 활용하여 파이썬 코드로 당도를 예측하였습니다. 
 
