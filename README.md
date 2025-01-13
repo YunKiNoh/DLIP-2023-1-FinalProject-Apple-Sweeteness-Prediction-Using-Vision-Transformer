@@ -242,7 +242,7 @@ PyTorch를 CUDA 11.7 version과 함께 설치합니다.
 본 프로젝트에서는 사과의 당도를 예측하기 위해서 사과의 이미지와 당도 값만을 사용하기로 결정하였으며, 이를 위해서는 사과의 색깔 정보와 당도 사이의 관계를 학습할 수 있는 회귀 모델이 필요하였습니다. 따라서 정교하고 높은 정확도를 가진 모델을 사용하는 것이 적합하다고 판단하였으며, 그 결과 ResNet50, DenseNet, VGG16, Inception v3 등 다양한 모델을 실험해보았습니다. 다만 기대에 비해 정확도가 높이 않음을 확인할 수 있었습니다.
 
 <div align="center">
-  <img width="486" alt="models" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/models.png" /><br>
+  <img width="940" alt="models" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/models.JPG" /><br>
   <p style="margin-top: 10px;">Figure 8. MES loss comparison of multiple deep learning model</p>
 </div>
 
@@ -250,8 +250,8 @@ PyTorch를 CUDA 11.7 version과 함께 설치합니다.
 따라서, 최근 이미지 처리에서 딥러닝에 널리 활용되고 있는 Vision Transformer(ViT) 모델을 사용하기로 결정하였습니다. 구체적으로는, 입력 크기가 224x224이고 16-패치(patch) 방식을 사용하는 vit_base_patch16_224 모델을 채택하였습니다.
 
 <div align="center">
-  <img width="940" alt="vit" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/vit.jpg" /><br>
-  <p style="margin-top: 10px;">Figure 8. Structure of Vision Transformers (VIT). Referenced by 'Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR.'
+  <img width="940" alt="vit" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/vit.JPG" /><br>
+  <p style="margin-top: 10px;">Figure 9. Structure of Vision Transformers (VIT). Referenced by 'Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR.'
 
 제공된 사과 데이터셋에서 일부 사진에 회전이 적용되어 세그멘테이션 좌표가 올바르게 맞지 않는 문제가 있었습니다. 이 문제를 해결하기 위해 사진의 EXIF 정보를 추출하여 회전이 적용된 경우 이를 조정하는 전처리 과정을 수행하여 올바른 정렬을 보장하였습니다.
 
@@ -275,8 +275,6 @@ def open_and_rotate_image(image_path):
         pass
     return image
 ```
-
-
 
 훈련에는 약 170,000장의 이미지를 사용하였고, 검증에는 약 17,000장의 이미지를 활용하였습니다. 훈련 이미지의 수가 많아 에포크(epoch) 크기를 늘렸으나, 이로 인해 훈련 시간이 크게 증가하는 문제가 발생하였습니다. 5에포크 이후에는 손실값이 크게 감소하지 않는 것을 관찰한 후, 최종적으로 에포크 수를 10으로 설정하였습니다. 손실 측정을 위해 회귀 문제에서 흔히 사용되는 평균 제곱 오차(Mean Squared Error, MSE) 손실 함수를 적용하였으며, 옵티마이저는 Adam을 사용하였습니다.
 
@@ -351,10 +349,10 @@ num_models = 3
 
 프로젝트 진행 중 설정된 목표 훈련 손실값인 2 이하를 달성한 것을 확인하였으며, 훈련 과정에서 과적합의 징후 없이 원활하게 진행되었음을 확인하였습니다.
 
-![loss](https://github.com/GracenPraise/DLIP2023/assets/91367451/79ed37bb-f551-4ecc-baa8-2e9b5494548a)
-
-> **Graph1. Train and Validation Loss Graph**
-
+<div align="center">
+  <img width="940" alt="loss" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/loss.JPG" /><br>
+  <p style="margin-top: 10px;">Graph1. Train and Validation Loss Graph</p>
+</div>
 
 
 ### Test Process
@@ -363,11 +361,14 @@ num_models = 3
 
 위에서 개발한 세그멘테이션 모델과 회귀 모델을 활용하여 사과의 당도를 실시간으로 예측할 수 있도록 코드를 작성하였습니다. 간단한 흐름은 다음과 같습니다.
 
-![flow](https://github.com/GracenPraise/DLIP2023/assets/91367451/331d7430-a64a-4ffe-b2d8-a3e19b6e990c)
+<div align="center">
+  <img width="940" alt="flow" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/flow.JPG" /><br>
+  <p style="margin-top: 10px;">Chart 1. Flow Chart</p>
+</div>
 
-> **Chart 1. Flow Chart**
+---
 
-First, the frame image is resized to a size of 224x224 to make it compatible with the prediction model. 
+먼저, 프레임 이미지를 예측 모델과 호환되도록 224x224 크기로 리사이즈합니다.
 
 ```python
 # Define transformations for the input
