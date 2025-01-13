@@ -43,12 +43,12 @@
 #### Hardware setting
 
 <div align="center">
-  <img width="940" alt="angle_picture" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob/blob/image/angle_picture.png" /><br>
+  <img width="940" alt="angle_picture" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob//image/angle_picture.png" /><br>
   <p style="margin-top: 10px;">
 </div>
 
 <div align="center">
-  <img width="940" alt="angle" src="angle_picture" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob/blob/image/angle.png" /><br>
+  <img width="940" alt="angle" src="angle_picture" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob/image/angle.png" /><br>
   <p style="margin-top: 10px;">Figure 1. Camera's Angle & Distance</p>
 </div>
 
