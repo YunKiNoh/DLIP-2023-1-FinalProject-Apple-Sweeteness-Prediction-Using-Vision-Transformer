@@ -12,11 +12,11 @@
 
 ## 1. Introduction
 
-In this project, we want to help cutomer to select apples when many apples are mixed without information that which apple is more sweet. Customer would want to spend money effectively, so they will spend more time to select apple. In addition to this, although there are several ways to check apple's sugar content(for example, using juice or infrared light), each way has limitation about damage to apple or high cost. To predict apple's sugar content by brix witout damge to apple and expencise cost, we determine using deep learing model. 
+이 프로젝트는 여러 사과가 섞여 있고, 어떤 사과가 더 달콤한지 알 수 없는 상황에서 고객이 사과를 쉽게 고를 수 있도록 돕는 것을 목표로 하고 있습니다. 사람들은 돈을 효율적으로 쓰고 싶어 하기 때문에 사과를 고르는 데 더 많은 시간을 쓸 가능성이 높습니다. 사과 당도를 확인하는 방법이 몇 가지 있긴 하지만, 주스를 짜거나 적외선을 사용하는 방법은 사과를 망가뜨리거나 비용이 많이 드는 문제가 있습니다. 그래서 사과에 손상을 주지 않으면서도 비싸지 않은 방법으로 브릭스(당도)를 예측하기 위해 딥러닝 모델을 사용하기로 결정했습니다.
 
 ### Goal
 
-By trainig deep learning model to predict sugar content of apple(Brix), predicting apple's sugar content in real time and print out the result is available. Since there have been no preceding studies on predicting apple sweetness, the train loss was set to be within 2 MSE (Mean Squared Error) losses, and the error between the actual sweetness value and the predicted value was arbitrarily set to be within plus or minus 5%.
+사과의 당도(브릭스)를 예측하기 위해 딥러닝 모델을 훈련함으로써, 사과의 당도를 실시간으로 예측하고 그 결과를 출력하는 것이 가능합니다. 사과의 당도를 예측하는 선행 연구가 없었기 때문에, 훈련 손실(train loss)은 MSE(Mean Squared Error) 기준 2 이내로 설정하였으며, 실제 당도 값과 예측 값 간의 오차는 임의로 ±5% 이내로 설정하였습니다.
 
 ### Hardware
 
@@ -72,7 +72,7 @@ By trainig deep learning model to predict sugar content of apple(Brix), predicti
 
 > **Figure 2. Deep Learning Dataset about apple from Jeonbuk**
 
-We used Jeonbuk's apple dataset to train deep learning model. Because Huji apple is most consumed in south korea, we chose 17,000 images and labeling dataset of Huji apple.
+저희는 딥러닝 모델을 훈련하기 위해 전북시에서 제공하는 사과 데이터셋을 사용하였습니다. 한국에서 가장 많이 소비되는 후지(Fuji) 사과를 당도 예측 대상으로 선정하였고, 딥러닝 학습을 수행하기 위해 후지 사과의 17,000개의 이미지와 라벨링된 데이터를 사용하였습니다.
 
 
 
@@ -86,7 +86,7 @@ Dataset from Jeonbuk is provided labeling data as json file.
 
 > **Table 2. Labeling Data**
 
-In the labeling dataset, we used 'segmentation coordination' to extract apple's pixels and 'sugar_content's information' to predict sugar content in Python code. 
+라벨링된 데이터셋에서는 '분할 좌표(segmentation coordination)'를 사용하여 사과의 픽셀을 추출하고, '당도 정보(sugar content's information)'를 활용하여 파이썬 코드로 당도를 예측하였습니다. 
 
 **Dataset link**: [AI-Hub ](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=490)
 
@@ -96,17 +96,17 @@ In the labeling dataset, we used 'segmentation coordination' to extract apple's 
 
 ### Setup & Installation
 
-To train deep learning model in Python, you have to setup several things. 
+파이썬에서 딥러닝 모델을 훈련하기에 앞서 몇 가지 준비 설정이 필요합니다. 
 
 #### 1. Anaconda Virtual Environment
 
-To deal with Python programming in private circumstance, you have to install several necessary programs in your private virtual environment. To create virtual environment, enter this code in anaconda.
+해당 프로젝트를 위해 개별적으로 파이썬 환경을 구축하기 위해서는 가상 환경을 생성하고 이곳에 여러가지 라이브러리를 설치해야 합니다. 우선 가상 환경을 생성하기 위해 Anaconda에서 다음 코드를 입력합니다.
 
 ``` 
 conda create -n py39 python=3.9.13
 ```
 
-If you want to activate, enter this code in Anaconda
+만약 가상환경을 활성화하고 싶다면 다음을 실행합니다.
 
 ``` 
 conda activate py39
@@ -114,7 +114,7 @@ conda activate py39
 
 #### 2. Install Libs 
 
-Install Numpy, OpenCV, Matplot, Jupyter in your virtual environment
+다음과 같은 라이브러리들을 가상환걍에 설치합니다. [Numpy, OpenCV, Matplot, Jupyter].
 
 ```
 conda activate py39
@@ -132,13 +132,13 @@ pip install ultralytics
 
 #### 3. Install Visual Studio Code
 
-Install VS Code by checking this site. 
+Visual Studio Code(VS Code)를 설치합니다. 
 
 **link**: [VS Code Downloads](https://code.visualstudio.com/download)
 
 #### 4-1. Server Computer's CUDA, cuDNN(Option) 
 
-Create private virtual environment and install CUDA and PyTorch 
+가상환경에 CUDA와 PyTorch를 설치합니다. 이번 프로젝트에서 사용한 버전은 다음과 같습니다.
 
 * CUDA 11.3.1
 * PyTorch 1.10
@@ -146,6 +146,7 @@ Create private virtual environment and install CUDA and PyTorch
 #### 4-2. Install GPU Driver, CUDA, cuDNN
 
 Because each driver has proper versions for compatbility, you must select the appropriate version of GPU Driver, CUDA, cuDNN.
+개인 노트북마다 호환되는 드라이버 버전이 다르기 때문에 개인 노트북의 사양을 확인하여  GPU Driver, CUDA, 그리고 cuDNN을 설치합니다. 자신에게 맞는 버전은 다음을 통해서 확인합니다.
 
 **1. Check PyTorch & CUDA Version**
 
@@ -153,7 +154,7 @@ Because each driver has proper versions for compatbility, you must select the ap
 
 > **Figure 3. Pytorch & CUDA Version**
 
-To use PyTorch, we have to use 11.7 or 11.8 version of CUDA.
+PyTorch를 사용하기 위해서는 11.7 version 또는 11.8 version의 CUDA를 사용해야 합니다.
 
 **2. Check Proper GPU Version for CUDA 11.7** 
 
@@ -167,7 +168,7 @@ To use PyTorch, we have to use 11.7 or 11.8 version of CUDA.
 
 > **Figure 5. GPU Driver**
 
-By checking your computer's information, install GPU Driver. 
+GPU 드라이버의 경우 다음을 통해서 노트북 사양에 맞는 소프트웨어 버전을 찾은 뒤 설치해줍니다. 
 
 **link**:[GPU Driver](https://www.nvidia.co.kr/Download/index.aspx?lang=kr)
 
@@ -187,7 +188,7 @@ Install CUDA 11.7
 
 **5. Install PyTorch**
 
-Install PyTorch with CUDA 11.7 version
+PyTorch를 CUDA 11.7 version과 함께 설치합니다.
 
 **link**:[PyTorch Downloads](https://pytorch.org/)
 
@@ -201,7 +202,7 @@ Install PyTorch with CUDA 11.7 version
 
 #### 1. Apple Segentation
 
-When measuring the sweetness of an apple, it is necessary to predict the sweetness only within the apple region, rather than the entire image. Therefore, segmentation is essential. After trying various models, we found that the pretrained model provided by Yolov8s-seg performed the best in apple segmentation, so we utilized it. By using the pretrained model, we were able to invest more time in training.
+딥러닝을 통해서 사과의 당도를 실시간으로 예측하기 위해서는 이미지 전체가 아닌 사과 이미지 내의 정보만을 가져오는 작업이 필요합니다. 이는 segmentation(인식한 물체의 이미지 정보를 픽셀 단위로 들고오는 작업)을 통해서 수행할 수 있습니다. segmentation의 경우 YOLO의 딥러닝 모델 중 상위 모델에서 제공하고 있는 기술인데, Yolov8s-seg에서 제공하는 사전 학습된 모델이 사과 세그멘테이션에 가장 우수한 성능을 보여 이 모델을 사과를 인식하고 해당 사과의 색깔 정보를 들고 오는데 활용하였습니다.
 
 <img width="486" alt="seg" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/5f51f480-090c-4774-ad52-19a6be9272cf">
 
@@ -209,19 +210,19 @@ When measuring the sweetness of an apple, it is necessary to predict the sweetne
 
 #### 2. Brix Prediction
 
-To predict the sweetness of an apple, the model needs to be trained solely on apple images and corresponding sweetness labels, solving a regression problem for sweetness prediction. Therefore, we determined that using a sophisticated and highly accurate model is appropriate. We experimented with various models such as resNet50, DenseNet, VGG16, Inception v3, among others, but encountered significant loss compared to our expectations.
+본 프로젝트에서는 사과의 당도를 예측하기 위해서 사과의 이미지와 당도 값만을 사용하기로 결정하였으며, 이를 위해서는 사과의 색깔 정보와 당도 사이의 관계를 학습할 수 있는 회귀 모델이 필요하였습니다. 따라서 정교하고 높은 정확도를 가진 모델을 사용하는 것이 적합하다고 판단하였으며, 그 결과 ResNet50, DenseNet, VGG16, Inception v3 등 다양한 모델을 실험해보았습니다. 다만 기대에 비해 정확도가 높이 않음을 확인할 수 있었습니다.
 
 ![models](https://github.com/GracenPraise/DLIP2023/assets/91367451/230886fc-1a29-49c1-902d-dfedb5d6f91f)
 
 > **Figure 8. MES loss comparison of multiple deep learning model**
 
-Therefore, we decided to utilize the Vision Transformer model, which has been widely used in deep learning for image processing recently. Specifically, we employed the vit_base_patch16_224 model, which accepts inputs of size 224x224 and utilizes a 16-patch approach.
+따라서, 최근 이미지 처리에서 딥러닝에 널리 활용되고 있는 Vision Transformer(ViT) 모델을 사용하기로 결정하였습니다. 구체적으로는, 입력 크기가 224x224이고 16-패치(patch) 방식을 사용하는 vit_base_patch16_224 모델을 채택하였습니다.
 
 ![vit](https://github.com/GracenPraise/DLIP2023/assets/91367451/a96e86d7-e83c-4e67-9865-0d195376a184)
 
 > **Figure 8. Structure of Vision Transformers (VIT). Referenced by 'Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale. ICLR.'**
 
-In the provided apple dataset, there was an issue where the segmentation coordinates did not align correctly due to the application of rotation in certain photos. To address this problem, we performed preprocessing by extracting the EXIF information from the photos and adjusting them accordingly if rotation was applied, ensuring proper alignment
+제공된 사과 데이터셋에서 일부 사진에 회전이 적용되어 세그멘테이션 좌표가 올바르게 맞지 않는 문제가 있었습니다. 이 문제를 해결하기 위해 사진의 EXIF 정보를 추출하여 회전이 적용된 경우 이를 조정하는 전처리 과정을 수행하여 올바른 정렬을 보장하였습니다.
 
 ```python
 def open_and_rotate_image(image_path):
@@ -246,7 +247,7 @@ def open_and_rotate_image(image_path):
 
 
 
-Approximately 170,000 images were used for training, while validation utilized around 17,000 images. Due to the large number of training images, we increased the epoch size. However, this resulted in significantly longer training times. After observing no significant decrease in loss beyond 5 epochs, we set the number of epochs to 10. For loss measurement, we employed the Mean Squared Error (MSE) loss, commonly used in regression problems. The optimizer used was Adam.
+훈련에는 약 170,000장의 이미지를 사용하였고, 검증에는 약 17,000장의 이미지를 활용하였습니다. 훈련 이미지의 수가 많아 에포크(epoch) 크기를 늘렸으나, 이로 인해 훈련 시간이 크게 증가하는 문제가 발생하였습니다. 5에포크 이후에는 손실값이 크게 감소하지 않는 것을 관찰한 후, 최종적으로 에포크 수를 10으로 설정하였습니다. 손실 측정을 위해 회귀 문제에서 흔히 사용되는 평균 제곱 오차(Mean Squared Error, MSE) 손실 함수를 적용하였으며, 옵티마이저는 Adam을 사용하였습니다.
 
 ```python
 num_models = 3
@@ -317,7 +318,7 @@ num_models = 3
                 print(f'Train Loss: {epoch_loss:.4f}')
 ```
 
-During the project, it was observed that the set target train loss of less than 2 was met, and it was confirmed that the training proceeded smoothly without any signs of overfitting.
+프로젝트 진행 중 설정된 목표 훈련 손실값인 2 이하를 달성한 것을 확인하였으며, 훈련 과정에서 과적합의 징후 없이 원활하게 진행되었음을 확인하였습니다.
 
 ![loss](https://github.com/GracenPraise/DLIP2023/assets/91367451/79ed37bb-f551-4ecc-baa8-2e9b5494548a)
 
@@ -329,7 +330,7 @@ During the project, it was observed that the set target train loss of less than 
 
 **Model Download: **[link](https://drive.google.com/drive/folders/12fvvtiPWf_keCtu5OOUQ4VUQA91ZJuhU?usp=drive_link)
 
-The code was written to utilize the segmentation model and regression model developed in the above process, enabling real-time prediction of apple sweetness. The simple flow is as follows.
+위에서 개발한 세그멘테이션 모델과 회귀 모델을 활용하여 사과의 당도를 실시간으로 예측할 수 있도록 코드를 작성하였습니다. 간단한 흐름은 다음과 같습니다.
 
 ![flow](https://github.com/GracenPraise/DLIP2023/assets/91367451/331d7430-a64a-4ffe-b2d8-a3e19b6e990c)
 
@@ -345,7 +346,7 @@ input_transforms = transforms.Compose([transforms.Resize((224, 224)),
                                                             std=[0.229, 0.224, 0.225])])
 ```
 
-Then, the yolov8-seg model is loaded to perform apple detection. If no apple is detected, the message 'Put the Apple' is displayed. 
+먼저, yolov8-seg 모델을 로드하여 사과를 감지합니다. 만약 사과가 감지되지 않으면 'Put the Apple' 메시지가 표시됩니다.
 
 ```python
 # Load segmentaion model
@@ -366,7 +367,7 @@ if ret == True: # Run YOLOv8 inference on the frame
             cv2.putText(frame, f'Put the Apple', (230, 200), user_font, 0.7, (255,255,255), 2)
 ```
 
-Once an object is detected and the Enter key is pressed, the segmentation process is initiated. As a result, a mask operation is performed to isolate the data within the apple region. Only the data within the segmented apple area is then utilized for further processing and analysis.
+객체가 감지되고 Enter 키가 눌리면 세그멘테이션 과정이 시작됩니다. 이 과정에서 마스크 연산이 수행되어 사과 영역 내의 데이터만 분리됩니다. 이후 처리와 분석은 세그멘테이션된 사과 영역 내의 데이터만을 사용하여 진행됩니다.
 
 ```python
 # When stop predict Brix
@@ -407,7 +408,7 @@ elif signal == 1:
             cv2.rectangle(frame, (min_x, min_y), (max_x, max_y), (102,102,255), 3)  # you can change the color and thickness
 ```
 
-The received data within the segmented area is used for the prediction of apple sweetness. The predicted sweetness value is then displayed.
+세그멘테이션된 영역 내에서 얻어진 데이터는 사과 당도의 예측에 사용됩니다. 예측된 당도 값은 화면에 표시됩니다.
 
 ```python
 def predict_sugar_content(_frame):
@@ -441,11 +442,9 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+100), user_font, 0.5, (255,255,255), 1)
 ```
 
-Finally, the results are displayed on the screen. Pressing the 'r' key takes you back to the previous step of segmentation.
+최종적으로 결과가 화면에 표시됩니다. 'r' 키를 누르면 이전 단계인 세그멘테이션 단계로 돌아갈 수 있습니다.
 
-
-
-Due to the heavy computational load of the model used for real-time apple sweetness prediction, significant frame drops occur. To mitigate this issue, the prediction is performed only when the apple is placed in position and the Enter key is pressed. To prevent the fluctuation of values with each frame change, the average sweetness value from multiple frames is used. The accumulated sweetness values are continuously added to calculate the average. If the apple is changed, the 'r' key should be pressed to reset the accumulation before proceeding with prediction by pressing the Enter key again.
+실시간으로 사과 당도를 예측하는 모델의 높은 연산 부담으로 인해 프레임 드롭이 발생하는 문제가 있습니다. 이를 완화하기 위해, 사과가 자리에 놓이고 Enter 키가 눌렸을 때만 예측을 수행하도록 설정하였습니다. 또한, 각 프레임 변화에 따른 값의 변동을 방지하기 위해 여러 프레임에서 예측된 당도 값을 평균으로 계산합니다. 예측된 당도 값은 계속 누적되어 평균값이 계산되며, 사과가 바뀌는 경우 'r' 키를 눌러 누적된 값을 초기화한 뒤 Enter 키를 다시 눌러 예측을 진행해야 합니다.
 
 | ![ready](https://github.com/GracenPraise/DLIP2023/assets/91367451/ba8f6e11-ec82-4565-bc6d-8b688a37ba02) | ![press_enter](https://github.com/GracenPraise/DLIP2023/assets/91367451/2fb3adb9-62b7-492c-8600-97b9e51f096f) | ![result](https://github.com/GracenPraise/DLIP2023/assets/91367451/0f0d6a77-ac59-4752-9504-66418f435a9b) |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
@@ -461,9 +460,9 @@ Due to the heavy computational load of the model used for real-time apple sweetn
 
 > **Figure 12. Result**
 
-Our project's final result is predicted brix value of apple. Before utilizing this brix value, checking this value is correct is essential.
+저희는 이전의 과정들을 통해서 카메라를 통해 실시간으로 캡쳐하고 있는 사과의 당도를 예측할 수 있었습니다. 다만 해당 값이 정확한지 확인하기 위해서 다음과 같이 평가 기준을 세우고 정확도를 평가하였습니다.
 
-To check reliability of our trained model, we chose 10 apples and check the error between real value of brix and predicted value of our model. And the result is like this.
+훈련된 모델의 신뢰성을 확인하기 위해 사과 10개를 선택하였으며, 사과들의 실제 브릭스 값을 즙을 통하여 측정하였고, 모델이 예측한 값이 직접 측정한 당도와 얼마나 차이가 있는지 확인하였습니다. 그 결과는 다음과 같습니다.
 
 |                  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |  8   |   9   |  10   |
 | :--------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--: | :---: | :---: |
