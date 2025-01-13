@@ -173,15 +173,16 @@ Because each driver has proper versions for compatbility, you must select the ap
   <p style="margin-top: 10px;">Figure 3. Pytorch & CUDA Version</p>
 </div>
 
-> **Figure 3. Pytorch & CUDA Version**
 
 PyTorch를 사용하기 위해서는 11.7 version 또는 11.8 version의 CUDA를 사용해야 합니다.
 
 **2. Check Proper GPU Version for CUDA 11.7** 
 
-<img width="733" alt="toolkit" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/bdc69e89-e0d0-40db-bb62-7f93d227200b">
+<div align="center">
+  <img width="940" alt="toolkit" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/toolkit.png" /><br>
+  <p style="margin-top: 10px;">Figure 4. CUDA Toolkit</p>
+</div>
 
-> **Figure 4. CUDA Toolkit**
 
 **Install GPU Driver**
 
