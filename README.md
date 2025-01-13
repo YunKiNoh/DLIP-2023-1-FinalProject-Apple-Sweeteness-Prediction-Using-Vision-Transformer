@@ -490,9 +490,10 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 ### Results
 
-![result_brix](https://github.com/GracenPraise/DLIP2023/assets/91367451/7102e510-d952-4672-9265-2948cf7be08f)
-
-> **Figure 12. Result**
+<div align="center">
+  <img width="940" alt="result_brix" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/result_brix.jpg" /><br>
+  <p style="margin-top: 10px;">Figure 12. Result</p>
+</div>
 
 저희는 이전의 과정들을 통해서 카메라를 통해 실시간으로 캡쳐하고 있는 사과의 당도를 예측할 수 있었습니다. 다만 해당 값이 정확한지 확인하기 위해서 다음과 같이 평가 기준을 세우고 정확도를 평가하였습니다.
 
@@ -530,19 +531,20 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 훈련에 사용된 데이터를 검토한 결과, 70% 이상의 이미지가 과수원에서 촬영된 것으로 나타났습니다. 이는 충분한 조명 조건에서 촬영된 사진이 대부분임을 의미하며, 실내 환경에서 훈련된 모델을 평가할 경우 오차가 발생할 수 있음을 시사합니다. 게다가 이번 프로젝트에서는 사과의 당도를 예측하기 위해 오로지 색깔 정보만을 의지하였기 때문에 이러한 광학 환경의 변화가 당도 예측에 더욱 큰 영향을 주는 것으로 보입니다. 이를 통해서 저희는 이미 시중에서 활용되고 있는 과일 당도 예측 사례들이 왜 외부 빛을 차단한 제한된 공간에서 주로 이루어지고 있는 지를 알 수 있었습니다. 실제로 실험했던 장소가 아닌 다른 곳에서 시연했을 때 당도 예측의 오차율이 급증했는데, 당도 예측의 안정성 및 정확도를 높이기 위해서는 제한된 환경에서 예측이 이루어져야 할 것입니다.
 
-<img width="576" alt="oneside" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/1fd6c890-8621-414b-b9b2-944864f42f6a">
-
-> **Figure 13. Most of Images Taken in Outside**
-
-
+<div align="center">
+  <img width="576" alt="oneside" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/oneside.png" /><br>
+  <p style="margin-top: 10px;">Figure 13. Most of Images Taken in Outside</p>
+</div>
 
 #### Rotation  
 
 Furthermore, it was observed that when the camera and the apple underwent rotation, the sweetness value varied even for the same apple. This could be attributed to the fact that the apple images used for training represented only one side of the apple, potentially introducing errors. It is believed that training with multiple angle images for a given apple-sweetness dataset could help reduce such errors.
 
-|![normal](https://github.com/GracenPraise/DLIP2023/assets/91367451/a46e0ca3-3834-4d11-b021-52bdb1668017) | ![rotation](https://github.com/GracenPraise/DLIP2023/assets/91367451/6a59645b-7784-4cbf-ad07-077b6fbf0f79) |
+<div align="center">
+| ![normal](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/normal.jpg) | ![rotation](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/rotation.jpg) |
 | :--------------------------------------: | :--------------------------------------: |
 | **Figure 14. Before Rotation (12.26 Brix)** | **Figure 15. After Rotation (10.35 Brix)** |
+</div>
 
 
 
