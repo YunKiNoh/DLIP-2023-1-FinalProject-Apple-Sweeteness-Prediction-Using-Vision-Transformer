@@ -42,11 +42,16 @@
 
 #### Hardware setting
 
-<img width="435" alt="angle_picture" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/27504f9d-6e9a-4866-9981-8bb263b2b2ee">
+<div align="center">
+  <img width="940" alt="angle_picture" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob/main/image/angle_picture.png" /><br>
+  <p style="margin-top: 10px;">
+</div>
 
-<img width="479" alt="angle" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/855b377f-54f2-4cf4-a6d8-e0567ba2c8a8">
+<div align="center">
+  <img width="940" alt="angle" src="https://github.com/YunKiNoh/24-2_IAIA_Project2-Automatic-Hamburger-Stacking-System/blob/main/image/angle.png" /><br>
+  <p style="margin-top: 10px;">Figure 1. Camera's Angle & Distance</p>
+</div>
 
-> **Figure 1. Camera's Angle & Distance**
 
 * Camera angle: 50**°**
 
