@@ -99,7 +99,6 @@ Dataset from Jeonbuk is provided labeling data as json file.
 | :----------------------: | :--------------------------: |
 | <img width="195" alt="labeling" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/labeling.png"> | <img width="468" alt="segmentation" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/segmentation.png"> |
 
-<br>
 <p>Table 2. Labeling Data</p>
 
 </div>
