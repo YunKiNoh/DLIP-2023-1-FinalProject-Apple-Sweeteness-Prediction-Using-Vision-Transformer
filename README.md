@@ -1,6 +1,5 @@
 # Apple Sweeteness Prediction Using Vision Transformer
 
- 
 
 **date**: 2023/06/19
 
@@ -367,7 +366,6 @@ num_models = 3
   <p style="margin-top: 10px;">Chart 1. Flow Chart</p>
 </div>
 
----
 
 먼저, 프레임 이미지를 예측 모델과 호환되도록 224x224 크기로 리사이즈합니다.
 
@@ -479,12 +477,13 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 실시간으로 사과 당도를 예측하는 모델의 높은 연산 부담으로 인해 프레임 드롭이 발생하는 문제가 있습니다. 이를 완화하기 위해, 사과가 자리에 놓이고 Enter 키가 눌렸을 때만 예측을 수행하도록 설정하였습니다. 또한, 각 프레임 변화에 따른 값의 변동을 방지하기 위해 여러 프레임에서 예측된 당도 값을 평균으로 계산합니다. 예측된 당도 값은 계속 누적되어 평균값이 계산되며, 사과가 바뀌는 경우 'r' 키를 눌러 누적된 값을 초기화한 뒤 Enter 키를 다시 눌러 예측을 진행해야 합니다.
 
+<div align="center">
+
 | ![ready](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/ready.JPG) | ![press_enter](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/press_enter.JPG) | ![result](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/result.JPG) |
 | :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-|   Figure 9. When No Object in Frame       |   Figure 10. When Apple Detected       |     Figure 11. Brix Prediction          |
+|   **Figure 9. When No Object in Frame**   |   **Figure 10. When Apple Detected**    |     **Figure 11. Brix Prediction**      |
 
-
-
+</div>
 
 ## 5. Results and Analysis
 
@@ -499,31 +498,34 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 훈련된 모델의 신뢰성을 확인하기 위해 사과 10개를 선택하였으며, 사과들의 실제 브릭스 값을 즙을 통하여 측정하였고, 모델이 예측한 값이 직접 측정한 당도와 얼마나 차이가 있는지 확인하였습니다. 그 결과는 다음과 같습니다.
 
-|                  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |  8   |   9   |  10   |
-| :--------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--: | :---: | :---: |
-| Real[brix]       | 12.5  | 13.0  | 13.7  | 11.0  | 12.0  | 10.0  | 14.2  | 11.0 | 13.0  | 12.0  |
-| Prediction[birx] | 12.44 | 12.76 | 13.15 | 11.71 | 12.16 | 11.53 | 14.12 | 11.7 | 12.88 | 13.63 |
-| Error[%]         | 0.48  | 1.85  | 4.01  | 6.45  | 1.33  | 15.3  | 0.56  | 6.36 | 0.92  | 13.58 |
 
-| Total[%] |
-| :------: |
-|   5.08   |
+<div align="center">
+
+|                  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |  8   |   9   |   10   | Total |
+| :--------------- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--: | :---: | :---: | :---: |
+| Real[brix]       | 12.5  | 13.0  | 13.7  | 11.0  | 12.0  | 10.0  | 14.2  | 11.0 | 13.0  | 12.0  |  -    |
+| Prediction[brix] | 12.44 | 12.76 | 13.15 | 11.71 | 12.16 | 11.53 | 14.12 | 11.7 | 12.88 | 13.63 |  -    |
+| Error[%]         | 0.48  | 1.85  | 4.01  | 6.45  | 1.33  | 15.3  | 0.56  | 6.36 | 0.92  | 13.58 | 5.08% |<br>
+<p style="margin-top: 10px;">Table 3. Evaluation Error</p>
+
+</div>
 
 일부 사과에 대해서 급격히 오차가 증가하며 오차를 5% 이내의 정확도를 달성한다는 목표는 달성하지 못하였습니다.
 
-> **Table 3. Evaluation Error**
+
+<div align="center">
 
 |             | Train Error[MSE] | Validation Error[MSE] | Evaluation Error[%] |
 | :---------: | :--------------: | :-------------------: | :-----------------: |
 |    Goal     |     Under 2      |    No Overfitting     |      Under 5%       |
 |   Result    |       1.89       |         3.02          |        5.08         |
-| Achievement |        O         |           O           |          X          |
+| Achievement |        O         |           O           |          X          |<br>
 
-> **Table 4. Result**
+<p style="margin-top: 10px;">Table 4. Result</p>
+
+</div>
 
 모델 훈련 과정에서 훈련 손실이 2 MSE 이하로 유지되는 것을 확인하였고, 검증 오류를 통해 모델이 과적합되지 않았음을 확인할 수 있었습니다. 그러나 평가 목표를 달성하는 데에는 실패하였습니다.
-
-
 
 ### Analysis
 
@@ -541,10 +543,13 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 Furthermore, it was observed that when the camera and the apple underwent rotation, the sweetness value varied even for the same apple. This could be attributed to the fact that the apple images used for training represented only one side of the apple, potentially introducing errors. It is believed that training with multiple angle images for a given apple-sweetness dataset could help reduce such errors.
 
 
+<div align="center">
+
 | ![normal](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/normal.jpg) | ![rotation](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/rotation.jpg) |
 | :--------------------------------------: | :--------------------------------------: |
 | **Figure 14. Before Rotation (12.26 Brix)** | **Figure 15. After Rotation (10.35 Brix)** |
 
+</div>
 
 
 
@@ -561,8 +566,6 @@ Furthermore, it was observed that when the camera and the apple underwent rotati
 - Sangsongfa, A., Am-Dee, N., Meesad P.(2020). Prediction of Pineapple Sweetness from Images Using Convolutional Neural Network. EAI
 
   ​
-
-
 ## 7. Appendix
 
 ```python
