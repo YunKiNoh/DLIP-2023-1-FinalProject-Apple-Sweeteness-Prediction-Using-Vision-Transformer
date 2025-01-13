@@ -540,11 +540,11 @@ cv2.putText(frame, f"Brix: {avg_predicted_sugar_content:.2f}", (min_x+70, min_y+
 
 Furthermore, it was observed that when the camera and the apple underwent rotation, the sweetness value varied even for the same apple. This could be attributed to the fact that the apple images used for training represented only one side of the apple, potentially introducing errors. It is believed that training with multiple angle images for a given apple-sweetness dataset could help reduce such errors.
 
-<div align="center">
+
 | ![normal](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/normal.jpg) | ![rotation](https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/rotation.jpg) |
 | :--------------------------------------: | :--------------------------------------: |
 | **Figure 14. Before Rotation (12.26 Brix)** | **Figure 15. After Rotation (10.35 Brix)** |
-</div>
+
 
 
 
