@@ -30,8 +30,10 @@
   | ------ | ----------------------------------- |
   | GPU    | 1xAMD EPYC 7742 2.25GHz Upto 3.4GHz |
   | CPU    | 4EA x NVIDIA A100 80GB (320GB VRAM) |
+<div align="center">
+  Table 1. Server Computer</p>
+</div>
 
-  > Table 1. Server Computer
 
 #### Hardware setting
 
