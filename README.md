@@ -48,7 +48,7 @@
 </div>
 
 <div align="center">
-  <img width="940" alt="angle" src="angle" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/angle.png" /><br>
+  <img width="940" alt="angle" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/angle.png" /><br>
   <p style="margin-top: 10px;">Figure 1. Camera's Angle & Distance</p>
 </div>
 
