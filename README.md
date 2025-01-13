@@ -80,7 +80,10 @@
 
 ## 2. Dataset
 
-<img width="359" alt="dataset" src="https://github.com/GracenPraise/DLIP2023/assets/91367451/1d6f28ab-d4e0-4bcb-9c91-57648fc9b617">
+<div align="center">
+  <img width="940" alt="dataset" src="https://github.com/YunKiNoh/DLIP-2023-1-FinalProject-Apple-Sweeteness-Prediction-Using-Vision-Transformer/blob/main/image/dataset.png" /><br>
+  <p style="margin-top: 10px;">Figure 2. Deep Learning Dataset about apple from Jeonbuk</p>
+</div>
 
 > **Figure 2. Deep Learning Dataset about apple from Jeonbuk**
 
