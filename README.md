@@ -1,7 +1,7 @@
 # Apple Sweeteness Prediction Using Vision Transformer
 
 
-**date**: 2023/06/19
+**Date**: 2023/06/19
 
 **Author**: Yun Ki Noh 21800226 / EunChan Kim 21801017
 
